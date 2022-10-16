@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # reference: https://github.com/helm/helm/issues/7149#issuecomment-676606513
+  name: {{ template "names" . }}
+  # name: {{ include "names" . | quote  }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ template "names" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "names" . }}
+    spec:
+      containers:
+      - name: main
+        image: {{ template "names" . }}
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
