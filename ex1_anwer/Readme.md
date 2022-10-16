@@ -1,5 +1,6 @@
 # 정답
 * _helpers.tpl에 define을 사용하여 템플릿 정의
+
 | 참고자료: https://helm.sh/docs/chart_template_guide/named_templates/#declaring-and-using-templates-with-define-and-template
 
 ```sh
@@ -7,6 +8,7 @@
 {{- .Release.Name -}}-named-template
 {{- end -}}
 ```
+
 * 정의한 template을 불러올 때는 define 또는 include 사용
 
 # template과 include차이
