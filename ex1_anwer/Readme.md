@@ -3,7 +3,7 @@
 
 | 참고자료: https://helm.sh/docs/chart_template_guide/named_templates/#declaring-and-using-templates-with-define-and-template
 
-```sh
+```yaml
 {{- define "names" }}
 {{- .Release.Name -}}-named-template
 {{- end -}}
@@ -13,13 +13,13 @@
 
 # template과 include차이
 * template은 action타입이어서 파이프라인 연동 불가
-```sh
+```yaml
 # 아래 코드는 오류
 name: {{ template "names" . | quote  }}
 ```
 
 * include는 function타입이어서 파이프라인 연동 가능
-```sh
+```yaml
 name: {{ include "names" . | quote  }}
 ```
 
