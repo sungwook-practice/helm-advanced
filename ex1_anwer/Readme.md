@@ -1,5 +1,7 @@
 # 정답
 * _helpers.tpl에 define을 사용하여 템플릿 정의
+| 참고자료: https://helm.sh/docs/chart_template_guide/named_templates/#declaring-and-using-templates-with-define-and-template
+
 ```sh
 {{- define "names" }}
 {{- .Release.Name -}}-named-template
