@@ -23,6 +23,5 @@ spec:
             value: {{ .Values.message }}
           - name: remove_prefix_whitespace
             value: {{- .Values.message }}
-            value: {{ .Values.number | toString }}
         ports:
         - containerPort: 80
