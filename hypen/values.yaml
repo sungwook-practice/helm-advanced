@@ -1,0 +1,5 @@
+replica: 1
+
+image: nginx
+
+message: " hello-world"

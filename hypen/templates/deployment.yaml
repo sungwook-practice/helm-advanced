@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-named-template
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-named-template
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-named-template
+    spec:
+      containers:
+      - name: main
+        image: {{ .Values.image }}
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        env:
+          - name: original_message
+            value: {{ .Values.message }}
+          - name: remove_prefix_whitespace
+            value: {{- .Values.message }}
+            value: {{ .Values.number | toString }}
+        ports:
+        - containerPort: 80
