@@ -2,6 +2,7 @@
 * helm 차트 익숙해지기 시리즈
 
 # 목차
+* [hypen(-) 예제](./hypen/)
 * [첫 번째 문제 - named template](./ex1_named_template/)
 * [첫 번째 문제 정답](./ex1_anwer/Readme.md)
 
