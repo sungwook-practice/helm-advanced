@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-not-with-scope
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-not-with-scope
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-not-with-scope
+    spec:
+      containers:
+      - name: main
+        image: {{ .Values.image }}
+        resources:
+          limits:
+            memory: "64Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
+        env:
+          - name: apple
+            value: {{ .Values.example.data.apple }}
+          - name: banana
+            value: {{ .Values.example.data.banana }}

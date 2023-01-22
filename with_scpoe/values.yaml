@@ -1,0 +1,8 @@
+replica: 1
+
+image: nginx
+
+example:
+  data:
+    apple: 1
+    banana: 2
